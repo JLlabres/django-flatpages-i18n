@@ -12,7 +12,7 @@ class FlatPage_i18n(MPTTModel):
     WEIGHT = [(i, i) for i in range(-10, 10)]
 
     parent = TreeForeignKey('self', related_name='children',
-        null=True, blank=True)
+        null=True, blank=True,on_delete=models.CASCADE)
     sites = models.ManyToManyField(Site)
     machine_name = models.CharField(_(u'machine name'), max_length=255,
         null=True, blank=True, default=None)
