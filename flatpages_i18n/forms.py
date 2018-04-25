@@ -21,7 +21,7 @@ class FlatpageForm(forms.ModelForm):
 
         # check trailing slash
         if settings.APPEND_SLASH and \
-            self.REQUIRED_MIDDLEWARE in settings.MIDDLEWARE_CLASSES and \
+            self.REQUIRED_MIDDLEWARE in settings.MIDDLEWARE and \
                 not url.endswith('/'):
             raise forms.ValidationError(_(u"URL '%(url)s' is missing a trailing slash.") % {'url': url})
 
