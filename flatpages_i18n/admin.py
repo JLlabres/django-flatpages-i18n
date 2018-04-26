@@ -40,6 +40,11 @@ class FlatPageAdmin(MPTTModelAdmin, TranslationAdmin):
             self.formfield_overrides = {
                 TextField: {'widget': RedactorEditor},
             }
+        elif getattr(settings, 'FLATPAGES_EDITOR', None) == 'CKEDITOR':
+            from ckeditor.widgets import CKEditorWidget
+            self.formfield_overrides = {
+                TextField: {'widget': CKEditorWidget},
+            }
         super(TranslationAdmin, self).__init__(*args, **kwargs)
         self._patch_list_editable()
 
