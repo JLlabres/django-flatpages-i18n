@@ -103,6 +103,8 @@ Settings
 
 FLATPAGES_EDITOR
     If you wish to use `Redactor`_ as WYSIWYG editor, set it to ``'REDACTOR'``. Default: ``None``.
+    If you wish to use `ckeditor`_ as WYSIWYG editor, set it to ``'CKEDITOR'``. Default: ``None``.
+        ( `djando-ckeditor must installed <https://github.com/django-ckeditor/django-ckeditor>`__ )
 
 FLATPAGES_REDACTOR_JS
     Path to Redactor .js file. Default: ``'js/redactor/redactor.js'``.
